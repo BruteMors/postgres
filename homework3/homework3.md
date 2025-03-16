@@ -158,6 +158,7 @@ BEGIN
 WHILE i <= 10 LOOP
 UPDATE text_data
 SET text = md5(random()::text);
+RAISE NOTICE 'loop step: %', i;
 i := i + 1;
 END LOOP;
 END $$;
